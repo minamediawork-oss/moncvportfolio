@@ -1,72 +1,482 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon CV Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Professionnel - Étudiante ISPITS Agadir</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #333;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    header {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 40px;
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#edf2f7;
+      color:#333;
+      padding:40px 15px;
     }
 
-    section {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
+    .cv-container{
+      max-width:1150px;
+      margin:auto;
+      background:#fff;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 15px 50px rgba(0,0,0,0.12);
+      display:grid;
+      grid-template-columns:340px 1fr;
     }
 
-    h2 {
-      color: #111827;
+    /* LEFT SIDE */
+
+    .sidebar{
+      background:linear-gradient(180deg,#0f172a,#1e293b);
+      color:white;
+      padding:40px 30px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      color: white;
+    .profile{
+      text-align:center;
+      margin-bottom:40px;
     }
+
+    .profile img{
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid rgba(255,255,255,0.9);
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+      margin-bottom:18px;
+    }
+
+    .profile h1{
+      font-size:30px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .profile p{
+      color:#cbd5e1;
+      font-size:15px;
+    }
+
+    .section-title{
+      font-size:18px;
+      font-weight:600;
+      margin-bottom:18px;
+      padding-bottom:8px;
+      border-bottom:2px solid rgba(255,255,255,0.15);
+      letter-spacing:0.5px;
+    }
+
+    .contact,
+    .skills,
+    .languages,
+    .qualities{
+      margin-bottom:35px;
+    }
+
+    .contact p,
+    .languages li,
+    .qualities li{
+      font-size:14px;
+      color:#e2e8f0;
+      margin-bottom:12px;
+    }
+
+    .languages ul,
+    .qualities ul{
+      list-style:none;
+    }
+
+    .skill{
+      margin-bottom:18px;
+    }
+
+    .skill span{
+      display:block;
+      margin-bottom:7px;
+      font-size:14px;
+    }
+
+    .progress{
+      width:100%;
+      height:8px;
+      background:#334155;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .progress div{
+      height:100%;
+      background:#38bdf8;
+      border-radius:20px;
+    }
+
+    /* RIGHT SIDE */
+
+    .main-content{
+      padding:50px;
+    }
+
+    .intro{
+      margin-bottom:40px;
+    }
+
+    .intro h2{
+      font-size:34px;
+      color:#0f172a;
+      margin-bottom:15px;
+    }
+
+    .intro p{
+      font-size:15px;
+      color:#64748b;
+      line-height:1.8;
+    }
+
+    .content-section{
+      margin-bottom:38px;
+    }
+
+    .content-section h3{
+      font-size:24px;
+      color:#0f172a;
+      margin-bottom:22px;
+      position:relative;
+      padding-left:18px;
+    }
+
+    .content-section h3::before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:5px;
+      width:6px;
+      height:30px;
+      background:#38bdf8;
+      border-radius:10px;
+    }
+
+    .timeline{
+      margin-bottom:28px;
+    }
+
+    .timeline h4{
+      font-size:18px;
+      margin-bottom:5px;
+      color:#111827;
+    }
+
+    .timeline span{
+      display:inline-block;
+      font-size:14px;
+      color:#38bdf8;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .timeline p{
+      color:#475569;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .project{
+      background:#f8fafc;
+      padding:20px;
+      border-radius:16px;
+      margin-bottom:18px;
+      border-left:5px solid #38bdf8;
+      transition:0.3s;
+    }
+
+    .project:hover{
+      transform:translateY(-3px);
+    }
+
+    .project h4{
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .project p{
+      color:#475569;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .certificates ul{
+      padding-left:20px;
+    }
+
+    .certificates li{
+      margin-bottom:12px;
+      color:#475569;
+    }
+
+    .interests{
+      background:#f8fafc;
+      padding:20px;
+      border-radius:14px;
+      line-height:2;
+      color:#475569;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:25px;
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    @media(max-width:950px){
+      .cv-container{
+        grid-template-columns:1fr;
+      }
+
+      .main-content{
+        padding:35px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Mina Moumach</h1>
-    <p>Étudiante • Portfolio • CV</p>
-  </header>
 
-  <section>
-    <h2>À propos</h2>
-    <p>Bienvenue dans mon portfolio personnel.</p>
-  </section>
+  <div class="cv-container">
 
-  <section>
-    <h2>Compétences</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Marketing Digital</li>
-    </ul>
-  </section>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email : exemple@email.com</p>
-  </section>
+      <div class="profile">
+
+        <!-- Random professional photo -->
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" alt="Photo professionnelle">
+
+        <h1>Mina Moumach</h1>
+        <p>Étudiante en Sciences Infirmières<br>ISPITS Agadir</p>
+      </div>
+
+      <div class="contact">
+        <h3 class="section-title">Contact</h3>
+
+        <p>📍 Agadir, Maroc</p>
+        <p>📞 +212 6 12 34 56 78</p>
+        <p>📧 mina.moumach@email.com</p>
+        <p>🌐 linkedin.com/in/minamoumach</p>
+      </div>
+
+      <div class="skills">
+        <h3 class="section-title">Compétences</h3>
+
+        <div class="skill">
+          <span>Communication</span>
+          <div class="progress">
+            <div style="width:92%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>Travail d'équipe</span>
+          <div class="progress">
+            <div style="width:95%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>Gestion du stress</span>
+          <div class="progress">
+            <div style="width:88%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>Microsoft Office</span>
+          <div class="progress">
+            <div style="width:80%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>HTML / CSS</span>
+          <div class="progress">
+            <div style="width:70%"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="languages">
+        <h3 class="section-title">Langues</h3>
+
+        <ul>
+          <li>🇲🇦 Arabe — Langue maternelle</li>
+          <li>🇫🇷 Français — Courant</li>
+          <li>🇬🇧 Anglais — Intermédiaire</li>
+        </ul>
+      </div>
+
+      <div class="qualities">
+        <h3 class="section-title">Qualités</h3>
+
+        <ul>
+          <li>✔ Sens des responsabilités</li>
+          <li>✔ Sérieuse et organisée</li>
+          <li>✔ Empathie et écoute</li>
+          <li>✔ Motivation professionnelle</li>
+          <li>✔ Adaptabilité rapide</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <section class="intro">
+
+        <h2>CV Professionnel</h2>
+
+        <p>
+          Étudiante motivée à l’ISPITS Agadir spécialisée dans le domaine des
+          sciences infirmières et techniques de santé. Sérieuse, dynamique et
+          passionnée par le secteur médical, je souhaite développer mes compétences
+          professionnelles à travers des stages et expériences pratiques dans un
+          environnement médical moderne et humain.
+        </p>
+
+      </section>
+
+      <section class="content-section">
+
+        <h3>Formation</h3>
+
+        <div class="timeline">
+          <h4>ISPITS Agadir</h4>
+          <span>2024 - Présent</span>
+
+          <p>
+            Formation en sciences infirmières et techniques de santé avec
+            apprentissage théorique et pratique dans le domaine médical,
+            hospitalier et relationnel.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <h4>Baccalauréat Sciences</h4>
+          <span>2023 - 2024</span>
+
+          <p>
+            Obtention du diplôme du baccalauréat avec développement des bases
+            scientifiques, analytiques et méthodologiques.
+          </p>
+        </div>
+
+      </section>
+
+      <section class="content-section">
+
+        <h3>Expériences</h3>
+
+        <div class="timeline">
+          <h4>Stage d’observation médicale</h4>
+          <span>2025</span>
+
+          <p>
+            Observation du fonctionnement d’un environnement hospitalier,
+            participation à des activités d’accompagnement et développement
+ des compétences relationnelles avec les patients.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <h4>Travaux pratiques académiques</h4>
+          <span>2024 - 2026</span>
+
+          <p>
+            Participation à différents ateliers et simulations pratiques
+            liés aux soins infirmiers, à l’hygiène médicale et à la
+            communication professionnelle.
+          </p>
+        </div>
+
+      </section>
+
+      <section class="content-section">
+
+        <h3>Projets Académiques</h3>
+
+        <div class="project">
+          <h4>Projet Prévention Santé</h4>
+
+          <p>
+            Réalisation d’un projet de sensibilisation sur l’importance
+            de l’hygiène et de la prévention des maladies dans le cadre
+            universitaire.
+          </p>
+        </div>
+
+        <div class="project">
+          <h4>Portfolio Étudiant</h4>
+
+          <p>
+            Création d’un portfolio numérique moderne en HTML et CSS
+            pour présenter les compétences, formations et expériences.
+          </p>
+        </div>
+
+        <div class="project">
+          <h4>Projet Communication Médicale</h4>
+
+          <p>
+            Travail en groupe sur les techniques de communication entre
+            personnel soignant et patients dans différents contextes.
+          </p>
+        </div>
+
+      </section>
+
+      <section class="content-section certificates">
+
+        <h3>Certificats & Activités</h3>
+
+        <ul>
+          <li>Certificat de participation à un atelier médical étudiant</li>
+          <li>Formation en communication professionnelle</li>
+          <li>Participation à des activités associatives universitaires</li>
+          <li>Initiation aux outils numériques et bureautiques</li>
+        </ul>
+
+      </section>
+
+      <section class="content-section">
+
+        <h3>Centres d’intérêt</h3>
+
+        <div class="interests">
+          Santé • Développement personnel • Lecture • Technologies •
+          Travail associatif • Voyage • Bien-être • Communication •
+          Innovation médicale
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
 
   <footer>
-    <p>©️ 2026 Mon CV Portfolio</p>
+    © 2026 - CV Professionnel | Étudiante ISPITS Agadir
   </footer>
+
 </body>
 </html>
